@@ -1,6 +1,6 @@
 {
   fullName = "David Schor";
   userName = "david-schor";
-  userEmail = "david.schor2000@gmail.com";
+  userEmail = "18281740+david-schor@users.noreply.github.com";
   sshPublicKey = "";
   }

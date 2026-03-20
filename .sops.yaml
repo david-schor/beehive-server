@@ -1,0 +1,7 @@
+keys:
+  - &bee-server 
+creation_rules:
+  - path_regex: secrets/[^/]+(\.(yaml|json|env|ini|conf))?$
+    key_groups:
+      - age:
+          - *bee-server

@@ -23,15 +23,15 @@
             bee-server = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
                 modules = [
-                ./configuration.nix
+                    ./configuration.nix
                 ];
             };
 
             bee-server-iso = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
                 modules = [
-                "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
-                ./modules/iso.nix
+                    "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
+                    ./modules/iso.nix
                 ];
             };
         };

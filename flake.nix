@@ -17,18 +17,23 @@
         nixpkgs, 
         ... 
     }@inputs: {
-        inherit (self) outputs;
         vars = import ./vars.nix;
 
-        nixosConfigurations.homelab = nixpkgs.lib.nixosSystem {
-            system = "x86_64-linux";
-            specialArgs = { inherit inputs outputs vars; };
-            
-            modules = [
-            # Import the previous configuration.nix we used,
-            # so the old configuration file still takes effect
+        nixosConfigurations = {
+            bee-server = nixpkgs.lib.nixosSystem {
+                system = "x86_64-linux";
+                modules = [
                 ./configuration.nix
-            ];
+                ];
+            };
+
+            bee-server-iso = nixpkgs.lib.nixosSystem {
+                system = "x86_64-linux";
+                modules = [
+                "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
+                ./modules/iso.nix
+                ];
+            };
         };
     };
 }

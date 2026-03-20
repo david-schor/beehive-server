@@ -44,7 +44,14 @@
       hashedPasswordFile = config.sops.secrets."user-password".path
     };
 
-    # TODO sops
+    sops = {
+      defaultSopsFile = ./secrets/secrets.yaml;
+      age.sshKeyPaths = ["/nix/secret/initrd/ssh_host_ed25519_key"];
+      secrets."user-password".neededForUsers = true;
+      secrets."user-password" = {};
+      # https://github.com/Mic92/sops-nix/issues/427
+      gnupg.sshKeyPaths = [];
+    };
 
     services = {
       openssh = {
@@ -82,4 +89,6 @@
   ];
 
   environment.variables.EDITOR = "nano";
+
+  system.stateVersion = "25.11";
 }

@@ -22,6 +22,7 @@
         nixosConfigurations = {
             bee-server = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
+                specialArgs = { inherit vars; };
                 modules = [
                     ./configuration.nix
                 ];
@@ -29,6 +30,7 @@
 
             bee-server-iso = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
+                specialArgs = { inherit vars; };
                 modules = [
                     "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
                     ./modules/iso.nix

@@ -13,7 +13,7 @@
     isNormalUser = true;
     extraGroups = ["wheel"];
     openssh.authorizedKeys.keys = [
-      vars.sshPublicKeyPersonal
+      vars.sshPublicKeyPrivate
     ];
   };
 

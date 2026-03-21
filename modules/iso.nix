@@ -1,6 +1,12 @@
-{vars, ...}: {
-  imports = [
-    ./_packages.nix
+{vars, pkgs, ...}: {
+      environment.systemPackages = with pkgs; [
+        git
+        nano
+        parted
+        efibootmgr
+        zfs
+        sops
+        age
   ];
 
   users.users.nixos = {

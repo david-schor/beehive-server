@@ -1,4 +1,6 @@
 name: Upgrade flake.lock
+permissions:
+  contents: write
 on:
   schedule:
     - cron: '0 1 * * *'

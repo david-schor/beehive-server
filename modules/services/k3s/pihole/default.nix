@@ -62,7 +62,7 @@ in
                       };
                     }
                     { name = "TZ";                    value = "Europe/Zurich"; }
-                    { name = "DNSMASQ_LISTENING";      value = "all"; }
+                    { name = "FTLCONF_dns_listeningMode"; value = "ALL"; }
                     { name = "FTLCONF_webserver_port"; value = "8080"; }
                   ];
                   volumeMounts = [

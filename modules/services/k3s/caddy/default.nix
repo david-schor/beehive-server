@@ -90,7 +90,7 @@ in
                     name = "infomaniak-api-token";
                     valueFrom.secretKeyRef = {
                       name = "caddy-secrets";
-                      key  = "infomaniak-api-token";
+                      key  = "INFOMANIAK_API_TOKEN";
                     };
                   }
                 ];

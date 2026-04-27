@@ -20,9 +20,9 @@
     networkmanager = {
       enable = true;
       dns = "none";
-      useDHCP = false;
-      dhcpcd.enable = false;
     };
+    useDHCP = false;
+    dhcpcd.enable = false;
     hostId = vars.hostId;
     hostName = vars.hostname;
   };

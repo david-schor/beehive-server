@@ -9,7 +9,7 @@ vaultwarden.schor.me {
     }
 }
 
-http://pihole.schor.me {
+http://pihole.schor.me:80 {
     encode zstd gzip
 
     reverse_proxy pihole:80

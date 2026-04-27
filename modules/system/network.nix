@@ -16,6 +16,7 @@
     firewall = {
       enable = true;
       allowedTCPPorts = [ 22 53 80 443 2222 6443 ];
+      allowedUDPPorts = [ 53 ];
     };
     networkmanager = {
       enable = true;

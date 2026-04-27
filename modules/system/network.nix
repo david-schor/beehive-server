@@ -12,7 +12,7 @@
       address = vars.gatewayIp;
       interface = vars.interface;
     };
-    nameservers = [ "127.0.0.1" ] ++ vars.nameservers; # pihole
+    nameservers = vars.nameservers;
     firewall = {
       enable = true;
       allowedTCPPorts = [ 22 53 80 443 2222 6443 ];

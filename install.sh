@@ -110,6 +110,7 @@ mkdir -pv /mnt/{boot,nix,data,etc/ssh,var/{lib,log}}
 mount -t zfs rpool/nix /mnt/nix
 mkdir -pv /mnt/nix/persist
 mount -t zfs rpool/persist /mnt/nix/persist
+mkdir -pv /mnt/nix/persist/{var/lib,var/log,etc/ssh}
 mount -t zfs rpool/data /mnt/data
 mkdir -pv /mnt/nix/secret/initrd
 chmod 0700 /mnt/nix/secret

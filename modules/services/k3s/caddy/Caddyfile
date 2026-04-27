@@ -1,6 +1,7 @@
 vaultwarden.schor.me {
     tls {
         dns infomaniak {env.INFOMANIAK_API_TOKEN}
+        resolvers 77.109.128.2 213.144.129.20
     }
     encode zstd gzip
 

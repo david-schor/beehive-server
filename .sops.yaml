@@ -1,0 +1,9 @@
+keys:
+  - &personal age12wvjv9l9u3d3c987svs7hhzwr0htkez8t3zur8aamurzx2kryf6qyjpsw2
+  - &beeserver age1a3km4hkurfj9evpttytc5x4lh9zrtzs0u0l5hzeg2ll3vyxcsf0s3xvujk
+creation_rules:
+  - path_regex: secrets/[^/]+(\.(yaml|json|env|ini|conf))?$
+    key_groups:
+      - age:
+          - *personal
+          - *beeserver

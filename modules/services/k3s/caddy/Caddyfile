@@ -1,0 +1,16 @@
+vaultwarden.schor.me {
+    tls {
+        dns infomaniak {env.INFOMANIAK_API_TOKEN}
+    }
+    encode zstd gzip
+
+    reverse_proxy vaultwarden:80 {
+        header_up X-Real-IP {remote}
+    }
+}
+
+http://pihole.schor.me {
+    encode zstd gzip
+
+    reverse_proxy pihole:80
+}

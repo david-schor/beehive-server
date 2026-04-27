@@ -87,10 +87,10 @@ in
                 imagePullPolicy = "Never";
                 env = [
                   {
-                    name = "infomaniak-api-token";
+                    name = "INFOMANIAK_API_TOKEN";
                     valueFrom.secretKeyRef = {
                       name = "caddy-secrets";
-                      key  = "INFOMANIAK_API_TOKEN";
+                      key  = "infomaniak-api-token";
                     };
                   }
                 ];

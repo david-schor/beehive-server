@@ -9,7 +9,7 @@
   interface = "enp1s0";
   gatewayIp = "192.168.40.1";
   serverIp = "192.168.40.2";
-  nameservers = [ "77.109.128.2" "213.144.129.20" ];
+  nameservers = [ "127.0.0.1" "77.109.128.2" "213.144.129.20" ];
   
   # git
   fullName = "David Schor";

@@ -5,6 +5,7 @@
 vaultwarden.schor.me {
     tls {
         propagation_delay 30s
+        propagation_timeout -1
     }
 
     encode zstd gzip
@@ -17,8 +18,9 @@ vaultwarden.schor.me {
 pihole.schor.me {
     tls {
         propagation_delay 30s
+        propagation_timeout -1
     }
-    
+
     encode zstd gzip
 
     reverse_proxy pihole:80

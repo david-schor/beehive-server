@@ -1,8 +1,12 @@
+{
+    dns infomaniak {env.INFOMANIAK_API_TOKEN}
+}
+
 vaultwarden.schor.me {
     tls {
-        dns infomaniak {env.INFOMANIAK_API_TOKEN}
-        resolvers 77.109.128.2 213.144.129.20
+        propagation_delay 30s
     }
+
     encode zstd gzip
 
     reverse_proxy vaultwarden:80 {
@@ -10,7 +14,11 @@ vaultwarden.schor.me {
     }
 }
 
-http://pihole.schor.me:80 {
+pihole.schor.me {
+    tls {
+        propagation_delay 30s
+    }
+    
     encode zstd gzip
 
     reverse_proxy pihole:80

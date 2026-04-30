@@ -31,6 +31,9 @@ This repository provides a declarative NixOS configuration with a custom ISO and
 - 🤖 `flake.lock` updated daily via GitHub Action and the server upgrades automatically once a month
 - 📦 [Custom ISO](https://github.com/david-schor/beehive-server/releases) for fast install
 - ☸️ k3s fully declarative to run services
+  - [caddy](https://caddyserver.com) with [infomaniak plugin](https://github.com/caddy-dns/infomaniak) as ingress for easy Let's Encrypt certificate registration and renewal
+  - [vaultwarden](https://github.com/dani-garcia/vaultwarden) for your passwords, secret notes and more
+  - [pihole](https://pi-hole.net/) as local dns (set server ip as your dns)
 - 🧱 Modular architecture increases maintainability and is future-oriented
 
 ## Getting started
@@ -44,6 +47,7 @@ First of all its important to create an ed25519 ssh key and based on that genera
 ```bash
 ssh-keygen -t ed25519 -C "<email or description>"
 ```
+
 ssh-to-age:
 ```bash
 ssh-to-age -private-key -i $HOME/.ssh/id_ed25519 -o key.txt
@@ -56,16 +60,24 @@ cat key.txt
 The output of `key.txt` must be set in `.sops.yaml`. It's used to encrypt your credentials.
 
 ### Installation 
-Use the [Custom ISO](https://github.com/david-schor/beehive-server/releases) and flash it on a usb-stick and boot from it. It's important to note, that you have to deactivate secure boot first.
-After you ssh'd into nixos e.g your server, run following cmd:
+Use the [Custom ISO](https://github.com/david-schor/beehive-server/releases) and flash it on a usb-stick and boot from it. It's important to note, that you have to deactivate secure boot first. For your own use, you have to set your own variables e.g ssh public key first and create an iso on your own:
+``` bash
+nix build .#nixosConfigurations.beeserver-iso.config.system.build.isoImage
+```
+
+After you booted from your iso you can ssh into nixos e.g your server, and run the installation script:
 ```bash
+ssh -i .\id_ed25519 nixos@192.168.40.2
+
 sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/david-schor/beehive-server/main/install.sh)"
 ```
-After the setup copy the vars into `vars.nix` (maybe you also have to change some vars) and also add the age key to `.sops.yaml`.
+
+After the setup, copy the vars into `vars.nix` (maybe you also have to change some vars) and also add the age key to `.sops.yaml`.
 Before you commit and push the changes run follwoing cmd to encrypt your credentials:
 ```bash
 sops -e -i secrets/secrets.yaml
 ```
+
 Now you can install the server configs:
 ```bash
 sudo nixos-install \
@@ -75,10 +87,11 @@ sudo nixos-install \
   --option substituters "https://cache.nixos.org https://beehiveserver.cachix.org" \
   --option trusted-public-keys "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= beehiveserver.cachix.org-1:ZzReqkFfK1Dc+Qfrfj79EnyqiLTw5N13r/4r18aZ51c="
 ```
+
 Finally you can reboot and boot into UEFI directly to enable secure boot and also set a UEFI password.
 
 ### Decrypt on boot
 To decrypt the drives you have to ssh into the server like this:
 ```bash
-ssh -i .\id_ed25519 root@192.168.40.2 -p 2222
+ssh -p 2222 -i .\id_ed25519 root@192.168.40.2 "zfs load-key rpool && killall zfs"
 ```

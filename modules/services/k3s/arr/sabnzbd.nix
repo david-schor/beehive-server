@@ -34,8 +34,8 @@ in
                   { name = "PUID"; value = "1000"; }
                   { name = "PGID"; value = "1000"; }
                   { name = "TZ";   value = "Europe/Zurich"; }
-                  { name = "SABNZBD__MISC__HOST_WHITELIST_ENTRIES"; value = "sabnzbd.schor.me"; }
-                ];
+                  { name = "SABNZBD__MISC__HOST_WHITELIST_ENTRIES"; value = "sabnzbd.schor.me, sabnzbd"; }
+                 ];
                 ports = [ { containerPort = 8080; } ];
                 volumeMounts = [
                   { mountPath = "/config";              name = "config"; }

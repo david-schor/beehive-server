@@ -25,3 +25,58 @@ pihole.schor.me {
 
     reverse_proxy pihole:80
 }
+
+sonarr.schor.me {
+    tls {
+        propagation_delay 30s
+        propagation_timeout -1
+    }
+
+    encode zstd gzip
+
+    reverse_proxy sonarr:80
+}
+
+radarr.schor.me {
+    tls {
+        propagation_delay 30s
+        propagation_timeout -1
+    }
+
+    encode zstd gzip
+
+    reverse_proxy radarr:80
+}
+
+jellyfin.schor.me {
+    tls {
+        propagation_delay 30s
+        propagation_timeout -1
+    }
+
+    encode zstd gzip
+
+    reverse_proxy jellyfin:80
+}
+
+seerr.schor.me {
+    tls {
+        propagation_delay 30s
+        propagation_timeout -1
+    }
+
+    encode zstd gzip
+
+    reverse_proxy seerr:80
+}
+
+sabnzbd.schor.me {
+    tls {
+        propagation_delay 30s
+        propagation_timeout -1
+    }
+
+    encode zstd gzip
+
+    reverse_proxy sabnzbd:80
+}

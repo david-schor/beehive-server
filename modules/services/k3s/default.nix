@@ -6,5 +6,6 @@
       ./caddy
       ./vaultwarden
       ./pihole
+      ./arr
     ];
   }

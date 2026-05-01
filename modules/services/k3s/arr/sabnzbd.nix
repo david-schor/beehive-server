@@ -35,14 +35,16 @@ in
                   { name = "PGID"; value = "1000"; }
                   { name = "TZ";   value = "Europe/Zurich"; }
                   { name = "SABNZBD__MISC__HOST_WHITELIST_ENTRIES"; value = "sabnzbd.schor.me, sabnzbd"; }
+                  { name = "SABNZBD__MISC__COMPLETE_DIR";   value = "/data/usenet/complete"; }
+                  { name = "SABNZBD__MISC__INCOMPLETE_DIR"; value = "/data/usenet/incomplete"; }
                  ];
                 ports = [ { containerPort = 8080; } ];
                 volumeMounts = [
                   { mountPath = "/config";              name = "config"; }
-                  { mountPath = "/data/usenet";         name = "data"; }
+                  { mountPath = "/data";                name = "data"; }
                 ];
               }
-            ];
+            ];    
             volumes = [
               { name = "config"; persistentVolumeClaim.claimName = "sabnzbd-config"; }
               { name = "data";   hostPath.path = "/data/arr"; }

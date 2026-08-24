@@ -34,6 +34,12 @@ This repository provides a declarative NixOS configuration with a custom ISO and
   - [caddy](https://caddyserver.com) with [infomaniak plugin](https://github.com/caddy-dns/infomaniak) as ingress for easy Let's Encrypt certificate registration and renewal
   - [vaultwarden](https://github.com/dani-garcia/vaultwarden) for your passwords, secret notes and more
   - [pihole](https://pi-hole.net/) as local dns (set server ip as your dns)
+  - full media setup for streaming movies and shows using usenet (fo torrents you have to setup another downloader)
+    - [jellyfin](https://jellyfin.org/) for streaming all media to your devices
+    - [seerr](https://seerr.dev/) to request any movie or show that you want
+    - [sabnzbd](https://sabnzbd.org/) for downloading the requested stuff
+    - [radarr](https://radarr.video/) as movie manager
+    - [sonarr](https://sonarr.tv/) as show manager
 - 🧱 Modular architecture increases maintainability and is future-oriented
 
 ## Getting started

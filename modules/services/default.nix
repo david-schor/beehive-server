@@ -7,5 +7,7 @@
     ./zfs.nix
     ./sops.nix
     ./k3s
+    ./sanoid
+    ./syncoid
   ];
 }

@@ -5,7 +5,7 @@ let
     plugins = [
       "github.com/caddy-dns/infomaniak@v1.0.2"
     ];
-    hash = "sha256-dL6TI4hZP4nYj2iTXConqhVm4ep/Z5YiiRfF8fRp/mo=";
+    hash = "sha256-rfRj3eG2iaA5Up1ZMTASejI2WQUm/ru7171tEEKC79M=";
   };
 
   caddyImageName = "caddy";

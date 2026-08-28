@@ -27,11 +27,6 @@ in
 {
   services.k3s.images = [ image ];
 
-  systemd.services.k3s.serviceConfig.ExecStartPre = [
-    "${pkgs.bash}/bin/bash -c 'rm -f /var/lib/rancher/k3s/server/manifests/caddy-deployment.yaml'"
-    "${pkgs.bash}/bin/bash -c 'rm -f /var/lib/rancher/k3s/server/manifests/caddy-config-map.yaml'"
-  ];
-
   systemd.services.k3s-import-caddy = {
     description = "Import caddy image into k3s";
     after = [ "k3s.service" ];

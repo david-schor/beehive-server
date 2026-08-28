@@ -15,7 +15,7 @@
     nameservers = vars.nameservers;
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 22 53 80 443 2222 6443 ];
+      allowedTCPPorts = [ 22 53 80 443 2222 3000 6443 9100 ];
       allowedUDPPorts = [ 53 ];
     };
     networkmanager = {

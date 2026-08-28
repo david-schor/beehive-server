@@ -80,3 +80,14 @@ sabnzbd.schor.me {
 
     reverse_proxy sabnzbd:80
 }
+
+grafana.schor.me {
+    tls {
+        propagation_delay 30s
+        propagation_timeout -1
+    }
+
+    encode zstd gzip
+
+    reverse_proxy grafana:80
+}

@@ -7,5 +7,7 @@
       ./vaultwarden
       ./pihole
       ./arr
+      ./grafana
+      ./prometheus
     ];
   }

@@ -4,7 +4,7 @@ let
   image = pkgs.dockerTools.pullImage {
     imageName = "docker.io/prom/prometheus";
     imageDigest = "sha256:5ce7540c3c00ef4ab0c9d2c995c6a5b9c421f44b4a115d97a2c7af3b1c21cbb0";
-    hash = "sha256-FiRygVk9FRRKsHA4kpkiDre2ORLYI7CSkV7+odUcBSw=";
+    hash = "sha256-3CqSA5vEBe1ViCEqHcrByFCDB8jIdVs+1S22FHqUS28=";
     finalImageTag = "latest";
     arch = "amd64";
   };

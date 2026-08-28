@@ -9,5 +9,6 @@
       ./arr
       ./grafana
       ./prometheus
+      ./node-exporter
     ];
   }

@@ -51,6 +51,19 @@ let
   };
 in
 {
+  sops.templates.grafana-k3s-secret = {
+    path = "/var/lib/rancher/k3s/server/manifests/grafana-secret.yaml";
+    content = builtins.toJSON {
+      apiVersion = "v1";
+      kind = "Secret";
+      metadata.name = "grafana-secrets";
+      type = "Opaque";
+      stringData = {
+        admin-token = config.sops.placeholder."grafana-password";
+      };
+    };
+  };
+
   services.k3s = {
     images = [ image ];
     manifests = {
@@ -102,7 +115,10 @@ in
                     }
                     {
                       name = "GF_SECURITY_ADMIN_PASSWORD";
-                      value = "admin"; # TODO: just for testing purpose, going to change later...
+                      valueFrom.secretKeyRef = {
+                        name = "grafana-secrets";
+                        key = "admin-token";
+                      };
                     }
                   ];
                   ports = [ { containerPort = 3000; } ];

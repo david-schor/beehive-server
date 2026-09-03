@@ -10,6 +10,7 @@
       "vaultwarden-password" = {};
       "infomaniak-api-token" = {};
       "pihole-password" = {};
+      "grafana-password" = {};
     };
     # https://github.com/Mic92/sops-nix/issues/427
     gnupg.sshKeyPaths = [];

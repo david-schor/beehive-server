@@ -23,6 +23,8 @@ pihole.schor.me {
 
     encode zstd gzip
 
+    redir / /admin/ 301
+
     reverse_proxy pihole:80
 }
 

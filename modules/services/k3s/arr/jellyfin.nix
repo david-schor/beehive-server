@@ -3,10 +3,10 @@
 let
   image = pkgs.dockerTools.pullImage {
     imageName = "jellyfin/jellyfin";
-    imageDigest = "sha256:1694ff069f0c9dafb283c36765175606866769f5d72f2ed56b6a0f1be922fc37"; 
-    hash = "sha256-0drc5RMB/GfW3fU130WTyAB4a8AfPBHMXNghFDwYPPs=";
-    finalImageTag = "latest";
-    arch = "amd64";
+    imageDigest = "sha256:fa7542a7a3c2c80ab6242048db6e8509505ab9d30ff62362b2cc295472e22252";     
+    hash = "sha256-FcSHxXdk8zm7YCPMozc4vV8OMpTkSW0Dz5LZdeyyQrw=";
+    finalImageName = "jellyfin/jellyfin";
+    finalImageTag = "12.0-rc7";
   };
 in
 {

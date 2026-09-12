@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 let
     backendImage = pkgs.dockerTools.pullImage {

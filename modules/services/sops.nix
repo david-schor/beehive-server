@@ -12,6 +12,7 @@
       "pihole-password" = {};
       "grafana-password" = {};
       "homelable-password" = {};
+      "homelable-secret-key" = {};
     };
     # https://github.com/Mic92/sops-nix/issues/427
     gnupg.sshKeyPaths = [];

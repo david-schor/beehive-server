@@ -18,15 +18,15 @@ let
   };
 in
 {
-    sops.templates.homelabel-k3s-secret = {
-        path = "/var/lib/rancher/k3s/server/manifests/homelabel-secret.yaml";
+    sops.templates.homelable-k3s-secret = {
+        path = "/var/lib/rancher/k3s/server/manifests/homelable-secret.yaml";
         content = builtins.toJSON {
             apiVersion = "v1";
             kind = "Secret";
-            metadata.name = "homelabel-secrets";
+            metadata.name = "homelable-secrets";
             type = "Opaque";
             stringData = {
-                admin-token = config.sops.placeholder."homelabel-password";
+                admin-token = config.sops.placeholder."homelable-password";
             };
         };
     };

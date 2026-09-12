@@ -6,7 +6,7 @@ let
         imageDigest = "sha256:504b7565da91ef7c3968f626d2a1f4e98746d1ca2e852a4782cd696bcdff8870";     
         hash = "sha256-785pWMMm4T5vejTxcuD30/T8eYJwSmKIBR+Z5GdiaRQ=";
         finalImageName = "ghcr.io/pouzor/homelable-backend";
-        finalImageTag = "2026.8";
+        finalImageTag = "latest";
     };
 
     frontendImage = pkgs.dockerTools.pullImage {
@@ -14,7 +14,7 @@ let
         imageDigest = "sha256:8f72b654bb02fb792c1ae9c376b36c80d628ca4bcdf770e9440dc0d83da4f351";
         hash = "sha256-eZ2+FYVO8aYfT0T9z23vaNYF/Nv4q2aF8pkpv4evi/c=";
         finalImageName = "ghcr.io/pouzor/homelable-frontend";
-        finalImageTag = "18.6";
+        finalImageTag = "latest";
   };
 in
 {

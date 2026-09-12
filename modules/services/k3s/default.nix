@@ -10,5 +10,6 @@
       ./grafana
       ./prometheus
       ./node-exporter
+      ./homelabel
     ];
   }

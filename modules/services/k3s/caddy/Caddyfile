@@ -23,9 +23,14 @@ pihole.schor.me {
 
     encode zstd gzip
 
-    redir / /admin/ 301
+    @root path /
+    handle @root {
+        redir /admin/ 301
+    }
 
-    reverse_proxy pihole:80
+    handle {
+        reverse_proxy pihole:80
+    }
 }
 
 sonarr.schor.me {

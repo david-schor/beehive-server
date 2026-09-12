@@ -27,6 +27,7 @@ in
             type = "Opaque";
             stringData = {
                 admin-token = config.sops.placeholder."homelable-password";
+                secret-key: "b9a9eda5bf25986e27342c18060059db56d5af386d70c6f4ca9d6882d762a183": # placeholder for testing
             };
         };
     };

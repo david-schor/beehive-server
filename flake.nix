@@ -21,11 +21,16 @@
     vars = import ./vars.nix;
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
+
+    commonSpecialArgs = {
+      inherit vars sops-nix lanzaboote;
+      nixidyEnvs = self.nixidyEnvs;
+    };
   in {
     nixosConfigurations = {
       beeserver = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit vars sops-nix lanzaboote; };
+        specialArgs = commonSpecialArgs;
         modules = [
           ./configuration.nix
           sops-nix.nixosModules.sops

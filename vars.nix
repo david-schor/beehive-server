@@ -20,7 +20,7 @@
   sshPublicKeyPersonal = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA8pAeIBnlr0krjDBi02Vm9GMo6MfCcVQMzOy3JLM2Py";
 
   argocdHash = "sha256-...";
-  argocdVersion = "v3.5.3";
+  argocdVersion = "argo-cd-10.9.2";
 
   gitRepo = "https://github.com/david-schor/beehive-server.git";
 
